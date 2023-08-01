@@ -1,0 +1,17 @@
+/alidata/php/logs/*log {
+    daily
+    rotate 30
+    missingok
+    notifempty
+    compress
+    dateext
+    sharedscripts
+    postrotate
+        if [ -f /alidata/php5.6.26/var/run/php-fpm.pid ]; then
+            kill -USR1 `cat /alidata/php5.6.26/var/run/php-fpm.pid`
+        fi
+    endscript
+    postrotate
+        /bin/chmod 644 /alidata/php/logs/*gz
+    endscript
+}

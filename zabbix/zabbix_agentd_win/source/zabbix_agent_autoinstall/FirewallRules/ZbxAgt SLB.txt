@@ -1,0 +1,7 @@
+Zabbix agent rule for SLB instance's LAN IP
+
+# All VPC possible addresses
+10.49.0.0/16
+10.158.0.0/16
+10.159.0.0/16
+100.64.0.0/10

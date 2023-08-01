@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="kd-proxy1"
+        description="kd-proxy1"
+        tags="kd-proxy1"
+        hostname="218.244.157.123:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+	
+</project>
+

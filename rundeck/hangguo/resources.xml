@@ -1,0 +1,30 @@
+<project>
+
+    <node
+        name="hangguo-web"
+        description="hangguo-web"
+        tags="hangguo-web"
+        hostname="121.41.76.116:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+    <node
+        name="hangguo-vpnserver"
+        description="hangguo-vpnserver"
+        tags="hangguo-vpnserver"
+        hostname="121.43.180.10:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+    <node
+        name="cuihh-test"
+        description="cuihh-test"
+        tags="cuihh-test"
+        hostname="10.100.1.229:22"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+</project>

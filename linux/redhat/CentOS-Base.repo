@@ -1,0 +1,49 @@
+[base]
+name=CentOS-5 - Base
+baseurl=http://centos.ustc.edu.cn/centos/5/os/$basearch/
+gpgcheck=1
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
+
+#released updates
+[update]
+name=CentOS-5 - Updates
+baseurl=http://centos.ustc.edu.cn/centos/5/updates/$basearch/
+gpgcheck=1
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
+
+#packages used/produced in the build but not released
+[addons]
+name=CentOS-5 - Addons
+baseurl=http://centos.ustc.edu.cn/centos/5/addons/$basearch/
+gpgcheck=1
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
+#additional packages that may be useful
+[extras]
+name=CentOS-5 - Extras
+baseurl=http://centos.ustc.edu.cn/centos/5/extras/$basearch/
+gpgcheck=1
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
+
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-5 - Plus
+baseurl=http://centos.ustc.edu.cn/centos/5/centosplus/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
+
+#contrib - packages by Centos Users
+[contrib]
+name=CentOS-5 - Contrib
+baseurl=http://centos.ustc.edu.cn/centos/5/contrib/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5
+
+#packages in testing
+[testing]
+name=CentOS-5 - Testing
+baseurl=http://centos.ustc.edu.cn/centos/5/testing/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-5

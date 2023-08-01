@@ -1,0 +1,11 @@
+﻿# Automatic Report Security part's temp files
+# These files which will be uploaded to devops
+/DataUpload/Dealed/
+/DataUpload/Queue/
+/DataUpload/ReportSecurity/
+/DataUpload/ReportSecurity_History/
+/DataUpload/ReportSecurity.zip
+/DataUpload/ReportSecurity.txt
+
+# for zhangpeiyao
+Database/Table/Create_ReportSecurity.md.lnk

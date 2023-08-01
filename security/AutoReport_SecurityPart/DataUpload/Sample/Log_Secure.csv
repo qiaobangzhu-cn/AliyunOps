@@ -1,0 +1,7 @@
+projectid,hostname,private_ip,public_ip,Index,Account,AccountTimes,Host,HostTimes
+1,prj-h1,192.168.0.1,106.14.0.1,1,root,5,116.228.89.206,5
+1,prj-h1,192.168.0.1,106.14.0.1,2,khadmin,2,116.228.89.207,2
+1,prj-h1,192.168.0.1,106.14.0.1,3,zyadmin,1,116.228.89.208,1
+1,prj-h2,192.168.0.2,,1,root,5,116.228.89.206,5
+1,prj-h2,192.168.0.2,,2,khadmin,2,,
+1,prj-h2,192.168.0.2,,3,,,,

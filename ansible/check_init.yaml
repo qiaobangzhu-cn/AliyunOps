@@ -1,0 +1,148 @@
+---
+- hosts: '{{hosts}}'
+  remote_user: zyadmin
+  sudo: yes
+  tasks:
+  - name:
+    file: path=/home/zyadmin/check_init_files state=directory owner=zyadmin group=zyadmin mode=777
+  - name:
+    shell: yum install rsync -y
+    when: ansible_distribution == "CentOS"
+  - name:
+    shell: apt-get update && apt-get install -y rsync
+    when: ansible_distribution == "Ubuntu"
+  - name:
+    shell: netstat -tnlp |grep sshd |awk -F ":" '{print $2}' |awk -F " " '{print $1}'
+    register: SSH_PORT
+  - name:
+    shell: ls -l /etc/profile.d/zy_tty.sh
+    register: ZY_TTY
+    ignore_errors: true
+  - name:
+    shell: expr `cat /etc/passwd | grep zyadmin |wc -l` + `cat /etc/sudoers |grep zyadmin | grep NOPASSWD |wc -l`
+    register: USER_ZY
+  - name:
+    shell: cat /etc/passwd | grep admin | grep -v zyadmin | wc -l
+    register: USER_Client
+  - name:
+    shell: ls -l /var/log/cmd_track.log
+    register: CMD_TRACK
+    ignore_errors: true
+  - name:
+    shell: cat /etc/profile |grep HISTSIZE= |awk -F "=" '{print $2}'
+    register: HISTORY_Long
+#  - name:
+#    shell: cat /etc/bashrc |grep "export HISTTIMEFORMAT=\"%F %T \""
+#    register: HISTORY_Date
+  - name:
+    shell: cat /etc/ssh/sshd_config |grep PermitRootLogin |awk -F " " '{print $2}'
+    register: PermitRootLogin
+  - name:
+    shell: ls -l /alidata/ops_script
+    register: LOG_CUT
+    ignore_errors: true
+  - name:
+    shell: cat /var/spool/cron/*admin |grep "/alidata/ops_script/del-log.sh"
+    register: Disk_clean
+    ignore_errors: true
+  - name:
+    shell: cat /etc/rc.local | grep -v '#' | grep -E 'start|sh' |wc -l
+    register: RC_LOCAL
+#  - name:
+#    shell: rpm -qa|grep {{item}} | wc -l
+#    when: ansible_distribution == "CentOS"
+#    with_items:
+#        - bash-completion
+#        - lrzsz
+#        - htop
+#        - screen
+#        - rsync
+#    register: SSH_QUICK_LOGIN
+#    ignore_errors: true
+#  - name:
+#    shell: echo -e "{{inventory_hostname}} {{ansible_eth0.ipv4.address}} {{item}} is not install\n" >> /home/zyadmin/check_init_files/check_file_{{ansible_eth0.ipv4.address}}.txt
+#    when: item.rc != 1
+#    with_items: "{{ SSH_QUICK_LOGIN.results }}"
+
+#  - debug: msg={{ RC_LOCAL.stdout }}
+#  - debug: msg={{ USER_Client.stdout }}
+  - name:
+    shell: echo {{inventory_hostname}} {{ansible_eth0.ipv4.address}} ---SSH_PORT NOT 40022--- >> /home/zyadmin/check_init_files/check_file_{{ansible_eth0.ipv4.address}}.txt
+    when: SSH_PORT.stdout != "40022"
+  - name:
+    shell: echo {{inventory_hostname}} {{ansible_eth0.ipv4.address}} ---ZY_TTY is not install--- >> /home/zyadmin/check_init_files/check_file_{{ansible_eth0.ipv4.address}}.txt
+    when: ZY_TTY | failed
+  - name:
+    shell: echo {{inventory_hostname}} {{ansible_eth0.ipv4.address}} ---USER_ZY zyadmin is not exist or not sudo permissions--- >> /home/zyadmin/check_init_files/check_file_{{ansible_eth0.ipv4.address}}.txt
+    when: USER_ZY.stdout < 2
+  - name:
+    shell: echo {{inventory_hostname}} {{ansible_eth0.ipv4.address}} ---USER_Client xxadmin is not exist--- >> /home/zyadmin/check_init_files/check_file_{{ansible_eth0.ipv4.address}}.txt
+    when: USER_Client.stdout < 1
+  - name:
+    shell: echo {{inventory_hostname}} {{ansible_eth0.ipv4.address}} ---CMD_Track is not install--- >> /home/zyadmin/check_init_files/check_file_{{ansible_eth0.ipv4.address}}.txt
+    when: CMD_TRACK | failed
+  - name:
+    shell: echo {{inventory_hostname}} {{ansible_eth0.ipv4.address}} ---HISTORY is not install--- >> /home/zyadmin/check_init_files/check_file_{{ansible_eth0.ipv4.address}}.txt
+#    when: HISTORY_Long.stdout != "10240" or HISTORY_Date.stdout != "export HISTTIMEFORMAT=\"%F %T \""
+    when: HISTORY_Long.stdout != 10240
+  - name:
+    shell: echo {{inventory_hostname}} {{ansible_eth0.ipv4.address}} ---PermitRootLogin is not Ban --- >> /home/zyadmin/check_init_files/check_file_{{ansible_eth0.ipv4.address}}.txt
+    when: PermitRootLogin.stdout != "no"
+  - name:
+    shell: echo {{inventory_hostname}} {{ansible_eth0.ipv4.address}} ---LOG_CUT is not install--- >> /home/zyadmin/check_init_files/check_file_{{ansible_eth0.ipv4.address}}.txt
+    when: LOG_CUT | failed
+  - name:
+    shell: echo {{inventory_hostname}} {{ansible_eth0.ipv4.address}} ---Disk_clean is not install--- >> /home/zyadmin/check_init_files/check_file_{{ansible_eth0.ipv4.address}}.txt
+    when: Disk_clean | failed
+  - name:
+    shell: echo {{inventory_hostname}} {{ansible_eth0.ipv4.address}} ---RC.LOCAL_file is empty --- >> /home/zyadmin/check_init_files/check_file_{{ansible_eth0.ipv4.address}}.txt
+    when: RC_LOCAL.stdout < 3
+
+  - name:
+    synchronize:
+     mode: pull
+     src: /home/zyadmin/check_init_files
+     dest: /home/zyadmin
+  - name:
+    file: path=/home/zyadmin/check_init_files/ state=absent
+
+############################################
+- hosts: 127.0.0.1
+  remote_user: zyadmin
+  sudo: yes
+  tasks:
+  - name:
+    file: path=/home/zyadmin/check_init_files state=directory owner=zyadmin group=zyadmin mode=777
+  - name:
+    shell: rpm -qa|grep bash-completion |wc -l
+    register: SSH_QUICK_LOGIN
+  - name:
+    shell: ls -l /home/zyadmin/.ssh/config
+    register: SSH_CONFIG
+    ignore_errors: true
+  - name:
+    shell: ansible --version
+    register: ANSIBLE_INSTALL
+  - name:
+    shell: cat /etc/profile |grep "/alidata/ansible" |wc -l
+    register: ANSIBLE
+  - name:
+    shell: ls -l /etc/profile.d/zy_tty.sh
+    register: ZY_TTY
+    ignore_errors: true
+
+#  - debug: msg={{ ANSIBLE_CONFIG_DIR.stdout }}
+  - name:
+    shell: echo CSOS {{ansible_eth0.ipv4.address}} ---SSH_QUICK_LOGIN NOT INSTALL--- >> /home/zyadmin/check_init_files/check_file.txt
+    when: SSH_QUICK_LOGIN.stdout != "1"
+    shell: echo CSOS {{ansible_eth0.ipv4.address}} ---The .ssh/config file not exist--- >> /home/zyadmin/check_init_files/check_file.txt
+    when: SSH_CONFIG | failed
+    shell: echo CSOS {{ansible_eth0.ipv4.address}} ---ANSIBLE is not install--- >> /home/zyadmin/check_init_files/check_file.txt
+    when: ANSIBLE_INSTALL.stdout == ""
+    shell: echo CSOS {{ansible_eth0.ipv4.address}} ---ANSIBLE_DIR is not in alidata--- >> /home/zyadmin/check_init_files/check_file.txt
+    when: ANSIBLE.stdout != "1"
+  - name:
+    shell: echo {{inventory_hostname}} {{ansible_eth0.ipv4.address}} ---ZY_TTY is not install--- >> /home/zyadmin/check_init_files/check_file_{{ansible_eth0.ipv4.address}}.txt
+    when: ZY_TTY | failed
+  - name:
+    shell: cat /home/zyadmin/check_init_files/check_file* >> /home/zyadmin/check_file_all.txt && rm -rf /home/zyadmin/check_init_files

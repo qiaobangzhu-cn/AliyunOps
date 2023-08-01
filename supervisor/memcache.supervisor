@@ -1,0 +1,7 @@
+[program:memcache]
+command = /alidata/memcached/bin/memcached -p 11211 -u memcached  -m 64 -c 60000  -l 0.0.0.0
+stdout_logfile = /alidata/log/supervisor/memcache_stdout.log
+stderr_logfile = /alidata/log/supervisor/memcache_stderr.log
+user = root
+autostart = true
+autorestart = true

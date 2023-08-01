@@ -1,0 +1,6 @@
+﻿# Packed sfx files
+/Binary/*.exe
+/*.exe
+
+# ossutil's output-dir
+/ossutil_output/

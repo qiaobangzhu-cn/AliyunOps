@@ -1,0 +1,63 @@
+#!/bin/bash
+if [ "$(cat /proc/version | grep centos)" != "" ];then
+   export LANG=zh_CN.UTF-8
+fi
+
+#message() {
+#whiptail --title "镜像环境及命令简介" --msgbox "尊敬的用户，为了更好的服务于你们，请您仔细阅读本文档。\n1.镜像目录环境\n安装目录及配置文件:/alidata/server\n日志目录:/alidata/log\n网站主目录:/alidata/www\n镜像随机密码：/alidata/account.log\n2.相关命令\n/etc/init.d/nginx start|stop|restart\n/etc/init.d/php-fpm start|stop|restart\n/etc/init.d/mysql start|stop|restart\n/etc/init.d/vsftpd start|stop|restart\n/etc/switch_php_version\n3.请按回车键下一步" --ok-button 下一步 --fb 20 60
+#switch_php
+#}
+
+
+switch_php() {
+OPTION=$(whiptail --title "php默认使用5.4" --menu "您可以选择php进行切换\nhelp:需要用到键盘的tab键,方向键,回车键" 15 60 5  1 "php5.2.17" 2 "php5.3.29" 3 "php5.4.23" 4 "php5.5.7" 5 "php5.6.8" --fb --ok-button 确定 --cancel-button 取消 3>&1 1>&2 2>&3)
+
+if [ "$OPTION" = "1" ]; then
+	  /etc/init.d/php-fpm stop
+      rm -fr /alidata/server/php
+      rm -fr /etc/init.d/php-fpm
+      ln -s /alidata/server/php-5.2.17   /alidata/server/php
+      ln -s /etc/init.d/php-fpm52        /etc/init.d/php-fpm 
+      /etc/init.d/php-fpm start
+      /etc/init.d/nginx restart
+      
+elif [ "$OPTION" = "2" ]; then
+     /etc/init.d/php-fpm stop
+      rm -fr /alidata/server/php
+      rm -fr /etc/init.d/php-fpm
+      ln -s /alidata/server/php-5.3.29   /alidata/server/php
+      ln -s /etc/init.d/php-fpm53        /etc/init.d/php-fpm 
+      /etc/init.d/php-fpm start
+      /etc/init.d/nginx restart
+
+elif [ "$OPTION" = "3" ]; then
+     /etc/init.d/php-fpm stop
+      rm -fr /alidata/server/php
+      rm -fr /etc/init.d/php-fpm
+      ln -s /alidata/server/php-5.4.23  /alidata/server/php
+      ln -s /etc/init.d/php-fpm54       /etc/init.d/php-fpm 
+      /etc/init.d/php-fpm start
+      /etc/init.d/nginx restart
+elif [ "$OPTION" = "4" ]; then        
+      /etc/init.d/php-fpm stop
+      rm -fr /alidata/server/php
+      rm -fr /etc/init.d/php-fpm
+      ln -s /alidata/server/php-5.5.7  /alidata/server/php
+      ln -s /etc/init.d/php-fpm55       /etc/init.d/php-fpm 
+      /etc/init.d/php-fpm start
+      /etc/init.d/nginx restart
+elif [ "$OPTION" = "5" ]; then        
+      /etc/init.d/php-fpm stop
+      rm -fr /alidata/server/php
+      rm -fr /etc/init.d/php-fpm
+      ln -s /alidata/server/php-5.6.8  /alidata/server/php
+      ln -s /etc/init.d/php-fpm56       /etc/init.d/php-fpm 
+      /etc/init.d/php-fpm start
+      /etc/init.d/nginx restart
+fi
+
+}
+
+switch_php
+#message
+

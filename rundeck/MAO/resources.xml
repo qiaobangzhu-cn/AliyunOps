@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+   <node
+        name="mao-nginx1"
+        description="mao-nginx1"
+        tags="mao-nginx1"
+        hostname="121.40.190.203:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+</project>
+

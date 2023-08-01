@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="srv-henancs-vpc1"
+        description="srv-henancs-vpc1"
+        tags="srv-gansucs-vpc1"
+        hostname="42.236.64.198:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+
+</project>

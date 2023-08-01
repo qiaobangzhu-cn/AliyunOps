@@ -1,0 +1,59 @@
+#!/bin/bash
+#created by zhuyun yut 2017.9.22
+echo "begin install postgresql9.6.5"
+chkconfig --list iptables
+chkconfig iptables off
+chkconfig --list iptables
+service iptables stop
+
+mkdir -p /alidata/pgsql
+mkdir -p /alidata/pgdata
+mkdir -p /alidata/pgpool
+
+yum -y install gcc*
+yum -y install readline-devel
+yum -y install openssl openssl-devel
+adduser postgres
+echo "postgres" | passwd --stdin postgres
+
+SRC_URI="http://ftp.postgresql.org/pub/source/v9.6.5/postgresql-9.6.5.tar.bz2"
+PKG_NAME=`basename $SRC_URI`
+wget http://ftp.postgresql.org/pub/source/v9.6.5/postgresql-9.6.5.tar.bz2
+if [ ! -s $PKG_NAME ]; then
+    wget -c $SRC_URI
+fi
+tar xjf ${PKG_NAME}
+cd postgresql-9.6.5
+./configure --prefix=/alidata/pgsql
+gmake
+gmake install
+
+sed -i 's@PATH=$PATH:$HOME\/bin@PATH=$PATH:$HOME\/bin:\/alidata\/pgsql\/bin@' /home/postgres/.bash_profile
+cat >> /home/postgres/.bash_profile << "E"OF
+export PS1=[`whoami`@`hostname`:'$PWD']"$ "
+export LD_LIBRARY_PATH=/alidata/pgsql/lib
+EOF
+
+chown postgres:postgres /alidata/pgdata
+
+su - postgres <<EOF
+/alidata/pgsql/bin/initdb -D /alidata/pgdata
+exit
+EOF
+
+cp contrib/start-scripts/linux /etc/init.d/postgresql
+
+sed -i 's@prefix=\/usr\/local\/pgsql@prefix=\/alidata\/pgsql@' /etc/init.d/postgresql
+sed -i 's@PGDATA="\/usr\/local\/pgsql\/data"@PGDATA="\/alidata\/pgdata"@g' /etc/init.d/postgresql
+
+chmod +x /etc/init.d/postgresql
+
+/etc/init.d/postgresql start
+chkconfig --add postgresql
+chkconfig postgresql on
+
+touch /alidata/pgsql/.pgsql_history
+chown postgres:postgres /alidata/pgsql/.pgsql_history
+
+echo "successful install postgresql9.6.5"
+# service postgresql start

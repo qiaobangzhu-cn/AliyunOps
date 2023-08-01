@@ -1,0 +1,33 @@
+;SFX Commands
+
+Setup=RarSfxAgent.bat
+SetupCode
+TempMode
+;Delete=TA
+;Overwrite=1
+
+; License will be shown when user choose ACCEPT or DECLINE.
+
+;License=License Title 可以自定义字符串
+;{
+;End-user license agreements<br>
+;最终用户许可协议
+;}
+
+
+; If it is NOT "TempMode", Text will be shown when user choose which folder to extract.
+
+Title=软件介绍标题
+Text
+{
+<b>安装说明</b><br>
+路径中不允许有空格。<br>
+推荐安装到非系统盘的根目录。<br>
+比如：<br>
+D:\<br>
+<br>
+<hr>
+<br>
+<b>软件说明：</b><br>
+<a href="https://localhost/" target="_blank">Hyperlink</a> and other description.
+}

@@ -1,0 +1,10 @@
+Zabbix agent rule for ZHUYUN jump servers
+
+# ssh1.jiagouyun.com
+115.29.244.224
+
+# ssh2.jiagouyun.com
+42.96.192.168
+
+# ssh1.jiagouyun.com
+114.215.208.149

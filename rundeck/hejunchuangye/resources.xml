@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="hjcy-web01"
+        description="hjcy-web01"
+        tags="hjcy"
+        hostname="121.197.0.45:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+
+</project>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="zq-svn"
+        description="zq-svn"
+        tags="zq-svn"
+        hostname="114.55.249.68:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+</project>

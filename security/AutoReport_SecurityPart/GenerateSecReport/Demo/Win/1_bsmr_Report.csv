@@ -1,0 +1,6 @@
+project_id,Vulnerability,OsType,Hostname,private_ip,public_ip,
+1,CVE-2014-0160,Linux,bsmr-web01,10.144.215.31,115.28.69.119,
+1,CVE-2014-6271,Linux,bsmr-web01,10.144.215.31,115.28.69.119,
+1,CVE-2016-10229,Linux,bsmr-web01,10.144.215.31,115.28.69.119,
+1,CVE-2016-7543,Linux,bsmr-web01,10.144.215.31,115.28.69.119,
+1,CVE-2017-6074,Linux,bsmr-web01,10.144.215.31,115.28.69.119,

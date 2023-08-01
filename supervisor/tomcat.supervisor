@@ -1,0 +1,9 @@
+[program:tomcat]
+command = /alidata/tomcat8/bin/catalina.sh run
+environment=JAVA_HOME="/alidata/java1.8/",JAVA_BIN="/alidata/java1.8/bin"
+user = www
+autostart = true
+autorestart = true
+stdout_logfile = /dev/stdout
+stdout_logfile_maxbytes = 0
+stderr_logfile = /alidata/log/supervisor/tomcat_stderr.log

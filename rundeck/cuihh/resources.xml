@@ -1,0 +1,12 @@
+<project>
+
+    <node
+        name="cuihh-test"
+        description="cuihh-test"
+        tags="cuihh-test"
+        hostname="10.100.1.229:22"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+</project>

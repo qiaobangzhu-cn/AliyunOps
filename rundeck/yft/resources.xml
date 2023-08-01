@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="yft-web"
+        description="yft-web"
+        tags="yft-web"
+        hostname="121.40.129.55:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+    <node
+        name="yft-svn"
+        description="yft-svn"
+        tags="yft-svn"
+        hostname="121.40.190.254:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+</project>
+

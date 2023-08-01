@@ -1,0 +1,7 @@
+2016-10-08 17:40:00.4418946 +0800 CST  -  Code: IncompleteSignature, RequestId: FF1A7C10-8518-479F-B29A-4539B05F587B, HostId: ecs-cn-hangzhou.aliyuncs.com, Message: The request signature does not conform to Aliyun standards. 
+2016-10-08 17:40:00.6089041 +0800 CST  -  Code: IncompleteSignature, RequestId: 4C827DC8-B220-49F5-9C30-8A29725B7303, HostId: slb-pop.aliyuncs.com, Message: The request signature does not conform to Aliyun standards. 
+2016-10-08 17:40:01.6069612 +0800 CST  -  dial tcp 127.0.0.1:1088: connectex: No connection could be made because the target machine actively refused it. 
+2016-10-08 17:40:02.9050355 +0800 CST  -  Get http://www.q22321q.com: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers) 
+2016-10-08 17:40:03.0050412 +0800 CST  -  Get https://www.baidu1.com: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers) 
+2016-10-08 17:40:03.4050641 +0800 CST  -  dial tcp 192.168.23.18:6379: i/o timeout 
+2016-10-08 17:40:03.6060756 +0800 CST  -  mysql 192.168.23.18:3307 dial tcp 192.168.23.18:3307: i/o timeout 

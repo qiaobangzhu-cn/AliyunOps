@@ -1,0 +1,7 @@
+Zabbix agent rule for ZHUYUN zabbix servers
+
+# hz-monitor.jiagouyun.com
+116.62.38.146
+
+# bj-monitor.jiagouyun.com
+59.110.24.125

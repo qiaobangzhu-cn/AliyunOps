@@ -1,0 +1,29 @@
+Setting up Logical Volume Management:   2 logical volume(s) in volume group "domuvg" now active
+Checking filesystems
+Checking all file systems.
+[/sbin/fsck.ext4 (1) -- /] fsck.ext4 -a /dev/xvda1 
+/: clean, 903485/1310720 files, 4289890/5242624 blocks
+Entering non-interactive startup
+Calling the system activity data collector (sadc): 
+Starting monitoring for VG domuvg:   2 logical volume(s) in volume group "domuvg" monitored
+Bringing up interface eth1:  RTNETLINK answers: File exists
+Starting cloudmonitor...
+Removed stale pid file: /usr/local/cloudmonitor/wrapper/bin/./cloudmonitor.pid
+Waiting for cloudmonitor.........
+running: PID:1109
+Aegis is running
+############################################
+iptables.sh
+Version: 20150526
+############################################
+Saving iptables rules: 
+ Iptables rules saved in /etc/iptables_history/iptables.170420_101803 
+Cleaning rules - setting policies - flush rules - delete chains: 
+ Cleaning done. 
+Creating rules for allowed INPUT traffic: 
+ INPUT rules created done. 
+Creating rules for allowed OUTPUT traffic: 
+ OUTPUT rules created done. 
+############################################
+Done. 
+/etc/rc3.d/S99local: line 12: /usr/local/diaobao_agent/startup.sh: No such file or directory

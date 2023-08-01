@@ -1,0 +1,7 @@
+[program:mongo]
+command = /alidata/mongodb/bin/mongod --dbpath /alidata/mongodb/data/ --logpath=/alidata/mongodb/mongodb.log --quiet
+stdout_logfile = /alidata/log/supervisor/mongo_stdout.log
+stderr_logfile = /alidata/log/supervisor/mongo_stderr.log
+user = root
+autostart = true
+autorestart = true

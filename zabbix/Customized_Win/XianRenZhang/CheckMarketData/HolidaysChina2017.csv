@@ -1,0 +1,32 @@
+Date,Weekday,Holiday Name,Holiday Type
+20170101,Sunday,New Year's Day,National holiday
+20170102,Monday,New Year's weekend,Common Local holidays
+20170122,Sunday,Special Working Day,Weekend
+20170127,Friday,Spring Festival Eve,National holiday
+20170128,Saturday,Chinese New Year,National holiday
+20170129,Sunday,Spring Festival Golden Week holiday,National holiday
+20170130,Monday,Spring Festival Golden Week holiday,Common Local holidays
+20170131,Tuesday,Spring Festival Golden Week holiday,Common Local holidays
+20170201,Wednesday,Spring Festival Golden Week holiday,Common Local holidays
+20170202,Thursday,Spring Festival Golden Week holiday,Common Local holidays
+20170204,Saturday,Special Working Day,Weekend
+20170401,Saturday,Special Working Day,Weekend
+20170402,Sunday,Qing Ming Jie holiday,National holiday
+20170403,Monday,Qing Ming Jie holiday,National holiday
+20170404,Tuesday,Qing Ming Jie,National holiday
+20170429,Saturday,Labour Day Holiday,National holiday
+20170430,Sunday,Labour Day Holiday,National holiday
+20170501,Monday,Labour Day,National holiday
+20170527,Saturday,Special Working Day,Weekend
+20170528,Sunday,Dragon Boat Festival holiday,National holiday
+20170529,Monday,Dragon Boat Festival holiday,National holiday
+20170530,Tuesday,Dragon Boat Festival,National holiday
+20170930,Saturday,Special Working Day,Weekend
+20171001,Sunday,National Day,National holiday
+20171002,Monday,National Day Golden Week holiday,National holiday
+20171003,Tuesday,National Day Golden Week holiday,National holiday
+20171004,Wednesday,Mid-Autumn Festival,National holiday
+20171005,Thursday,National Day Golden Week holiday,Common Local holidays
+20171006,Friday,National Day Golden Week holiday,Common Local holidays
+20171007,Saturday,National Day Golden Week holiday,Common Local holidays
+20171008,Sunday,National Day Golden Week holiday,Common Local holidays

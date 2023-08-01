@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="srv-dby-service01"
+        description="srv-dby-service01"
+        tags="srv-dby-service01"
+        hostname="120.26.1.231:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+    <node
+        name="srv-dby-es01"
+        description="srv-dby-es01"
+        tags="srv-dby-es01"
+        hostname="120.26.70.209:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+</project>
+

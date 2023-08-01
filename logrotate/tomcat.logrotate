@@ -1,0 +1,9 @@
+/alidata/tomcat/logs/catalina.out {
+  rotate 30
+  daily
+  copytruncate
+  compress
+  notifempty
+  dateext
+  missingok
+}

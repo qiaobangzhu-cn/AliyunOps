@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="srv-hcast-web01"
+        description="srv-hcast-web01"
+        tags="srv-hcast-web01"
+        hostname="101.201.39.165:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+    <node
+    	name="srv-hcast-web02"
+	description="srv-hcast-web02"
+	tags="srv-hcast-web02"
+	hostname="101.201.43.17:40022"
+	username="zyadmin"
+	sudo-command-enabled="true"
+    />
+
+</project>
+

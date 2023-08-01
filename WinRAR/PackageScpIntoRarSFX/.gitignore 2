@@ -1,0 +1,6 @@
+﻿# Packed sfx files
+/*.exe
+/Binary/*.exe
+
+# for zhangpeiyao
+/SyncFromMvg.bat

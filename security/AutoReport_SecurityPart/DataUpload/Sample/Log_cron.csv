@@ -1,0 +1,7 @@
+projectid,hostname,private_ip,public_ip,log_cron
+1,prj-h1,192.168.0.1,106.14.0.1,TRUE
+1,prj-h2,192.168.0.2,,FALSE
+,,,,
+,,,,
+,,,,True 表示需要进一步显示内容
+,,,,False 表示没有额外内容

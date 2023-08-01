@@ -1,0 +1,7 @@
+[program:php-fpm]
+command = /alidata/php/sbin/php-fpm --nodaemonize
+stdout_logfile=/alidata/log/supervisor/php-fpm_stdout.log
+stderr_logfile=/alidata/log/supervisor/php-fpm_stderr.log
+user = root
+autostart = true
+autorestart = true

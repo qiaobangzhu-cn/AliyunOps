@@ -1,0 +1,13 @@
+/alidata/nginx/logs/*.log {
+daily
+rotate 30
+missingok
+notifempty
+dateext
+sharedscripts
+postrotate
+    if [ -f /alidata/nginx/logs/nginx.pid ]; then
+        kill -USR1 `cat /alidata/nginx/logs/nginx.pid`
+    fi
+endscript
+}

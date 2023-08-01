@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="srv-zwtest-node1"
+        description="srv-zwtest-node1"
+        tags="node1test"
+        hostname="58.16.65.92:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+   
+   <node
+        name="srv-zwtest-node2"
+        description="srv-zwtest-node2"
+        tags="node2test"
+        hostname="58.16.65.85:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+   <node
+        name="srv-zwtest-vpc1"
+        description="srv-zwtest-vpc1"
+        tags="vpc1test"
+        hostname="58.16.65.82:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+   <node
+        name="srv-zwtest-memcache"
+        description="srv-zwtest-memcache"
+        tags="memcachetest"
+        hostname="58.16.65.78:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+   <node
+        name="srv-zwtest-proxy"
+        description="srv-zwtest-proxy"
+        tags="proxytest"
+        hostname="58.16.65.87:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+</project>
+

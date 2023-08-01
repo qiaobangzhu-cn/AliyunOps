@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="srv-nsk-web1"
+        description="srv-nsk-web1"
+        tags="srv-nsk-web1"
+        hostname="121.40.93.17:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+</project>
+

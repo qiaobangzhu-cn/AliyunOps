@@ -1,0 +1,10 @@
+projectid,hostname,private_ip,public_ip,FwIdx_num,FwIdx_prot,FwIdx_rule
+1,prj-h1,192.168.0.1,106.14.0.1,1,all,state NEW tcp dpt:22
+1,prj-h1,192.168.0.1,106.14.0.1,3,icmp,state NEW tcp dpt:23
+1,prj-h1,192.168.0.1,106.14.0.1,5,tcp,state NEW tcp dpts:50000:51000
+1,prj-h2,192.168.0.2,,6,all,state NEW tcp dpt:25
+1,prj-h2,192.168.0.2,,8,icmp,state NEW tcp dpt:26
+1,prj-h2,192.168.0.2,,10,udp,state NEW tcp dpts:50000:51000
+,,,,,,
+,,,,,,
+,,,,防火墙规则序号,防火墙规则协议,防火墙规则表述

@@ -1,0 +1,7 @@
+[program:redis]
+command = /alidata/redis/src/redis-server /alidata/redis/redis.conf
+stdout_logfile = /alidata/log/supervisor/redis_stdout.log
+stderr_logfile = /alidata/log/supervisor/redis_stderr.log
+user = redis
+autostart = true
+autorestart = true

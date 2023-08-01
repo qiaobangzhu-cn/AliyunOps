@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="hongbo"
+        description="hongbo"
+        tags="hongbo"
+        hostname="123.56.21.143:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+
+</project>

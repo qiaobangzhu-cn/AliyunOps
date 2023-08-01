@@ -1,0 +1,6 @@
+# personal files
+/DnsServer.txt
+
+# Demo Data
+# Not leaking our customer's infomation
+/DomainList_Demo.txt

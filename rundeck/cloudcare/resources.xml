@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="srv-zy-web1"
+        description="srv-zy-web1"
+        tags="srv-zy-web1"
+        hostname="112.124.54.250:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+    <node
+        name="srv-zy-web2"
+        description="srv-zy-web2"
+        tags="srv-zy-web2"
+        hostname="115.29.174.18:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+</project>

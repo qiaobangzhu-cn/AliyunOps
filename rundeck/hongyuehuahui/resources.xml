@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="hongyue-hongyue"
+        description="hongyue-hongyue"
+        tags="hongyue-hongyue"
+        hostname="42.121.192.249:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+    <node
+        name="hongyue-huacaijia"
+        description="hongyue-huacaijia"
+        tags="hongyue-huacaijia"
+        hostname="42.120.23.246:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+	
+	<node
+		name="hongyue-web02"
+		description="hongyue-web02"
+		tags="hongyue-web02"
+		hostname="120.55.180.177:40022"
+		username="zyadmin"
+		sudo-command-enabled="true"
+	/>
+	
+	<node
+		name="hongyue-svn1"
+		description="hongyue-svn1"
+		tags="hongyue-svn1"
+		hostname="120.27.141.200:40022"
+		username="zyadmin"	
+		sudo-command-enabled="true"
+	/>
+
+</project>
+

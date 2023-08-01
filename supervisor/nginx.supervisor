@@ -1,0 +1,7 @@
+[program:nginx]
+command = /alidata/nginx/sbin/nginx  -g 'daemon off;'
+stdout_logfile = /alidata/log/supervisor/nginx_stdout.log
+stderr_logfile = /alidata/log/supervisor/nginx_stderr.log
+user = root
+autostart = true
+autorestart = true

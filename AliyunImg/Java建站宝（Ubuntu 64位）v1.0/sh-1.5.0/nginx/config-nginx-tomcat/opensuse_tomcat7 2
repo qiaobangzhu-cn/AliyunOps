@@ -1,0 +1,82 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides: tomcat7
+# Required-Start: $local_fs $remote_fs $network
+# Required-Stop: $local_fs $remote_fs $network
+# Should-Start: $named
+# Should-Stop: $named
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Start Tomcat.
+# Description: Start the Tomcat servlet engine.
+### END INIT INFO
+
+
+TOMCAT_HOME=/alidata/server/tomcat7
+TOMCAT_BIN=$TOMCAT_HOME/bin
+TOMCAT_TEMP=$TOMCAT_HOME/temp
+lockfile=/var/run/tomcat.lock
+JAVA_HOME=/alidata/server/java
+TOMCAT_UMASK=002
+
+
+if [ `id -u` -ne 0 ]; then
+echo "You need root or sudo privileges to run this script"
+exit 1
+fi
+
+start_sams() {
+if [ -f $TOMCAT_LOCK ];then
+echo ' * SAMS has already been started or has problems'
+echo ' * Please contact Tomas'
+exit 1
+fi
+start-stop-daemon --start -u "$TOMCAT_USER" -g "$TOMCAT_GROUP" \
+-c "$TOMCAT_USER" -d "$TOMCAT_TEMP" \
+-k "$TOMCAT_UMASK" -x "$TOMCAT_BIN/startup.sh" > /dev/null && \
+echo " * SAMS starts successfully" && touch $TOMCAT_LOCK
+
+}
+start()
+{
+	if [ -f $lockfile ];then
+		echo ' Tomcat has already been started or has problems'
+		exit 1
+	fi
+	echo -n $"Start Tomcat:											[ok] "
+	$TOMCAT_BIN/startup.sh >/dev/null 2>&1
+	RETVAL=$?
+	echo
+	[ $RETVAL = 0 ] && touch ${lockfile}
+	return $RETVAL
+}
+stop() {
+	if [ ! -f $lockfile ];then
+		echo ' * Tomcat has already been stopped or has problems'
+		exit 1
+	fi
+	echo -n $"Stopping Tomcat:										[ok] "
+	$TOMCAT_BIN/shutdown.sh  >/dev/null 2>&1
+	RETVAL=$?
+	echo
+	[ $RETVAL = 0 ] && rm -f ${lockfile} 
+}
+
+
+case "$1" in
+start)
+start
+;;
+stop)
+stop
+;;
+restart)
+stop
+sleep 1
+start
+;;
+*)
+echo ' * Usage: /etc/init.d/tomcat7 {start|stop|restart}'
+exit 1
+;;
+esac

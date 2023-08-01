@@ -1,0 +1,6 @@
+Zabbix agent rule for RFC1918 addresses
+
+# All VPC possible addresses
+10.0.0.0/8
+172.16.0.0/12
+192.168.0.0/16

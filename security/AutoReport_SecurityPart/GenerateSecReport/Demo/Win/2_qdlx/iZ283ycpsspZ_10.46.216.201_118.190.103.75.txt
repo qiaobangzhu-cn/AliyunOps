@@ -1,0 +1,6 @@
+HOSTNAME:iZ283ycpsspZ
+ETH0:10.46.216.201
+ETH1:118.190.103.75
+SYSTEM:Windows Server 2008 R2 Standard
+IPTABLES:ON
+version:1.1

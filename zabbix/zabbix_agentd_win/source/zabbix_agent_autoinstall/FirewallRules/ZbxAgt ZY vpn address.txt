@@ -1,0 +1,7 @@
+Zabbix agent rule for ZHUYUN vpn addresses
+
+# zy-vpn.jiagouyun.com
+116.228.89.206
+
+# hz-vpn.jiagouyun.com
+121.43.190.54

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="anhui-zwy-vpcyf"
+        description="anhui-zwy-vpcyf"
+        tags="anhui-zwy-vpcyf"
+        hostname="61.190.254.57:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+
+</project>
+

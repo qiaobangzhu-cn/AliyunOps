@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="qkl-proxy"
+        description="qkl-proxy"
+        tags="qkl-proxy"
+        hostname="139.196.241.38:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+
+</project>
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="srv-yzsx-web01"
+        description="test"
+        tags="yzsx-web"
+        hostname="121.41.96.122:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+    <node
+        name="srv-yzsx-web02"
+        description="test"
+        tags="yzsx-web"
+        hostname="121.40.83.37:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+    <node
+        name="srv-yzsx-web03"
+        description="test"
+        tags="yzsx-web"
+        hostname="114.55.224.32:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+    <node
+        name="srv-yzsx-web04"
+        description="test"
+        tags="yzsx-web"
+        hostname="120.27.241.114:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+    <node
+        name="srv-yzsx-web05"
+        description="test"
+        tags="yzsx-web"
+        hostname="114.55.224.11:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+    <node
+        name="srv-yzsx-web06"
+        description="test"
+        tags="yzsx-web"
+        hostname="114.55.72.173:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+    <node
+        name="srv-yzsx-service01"
+        description="test"
+        tags="yzsx-service"
+        hostname="121.41.113.218:40022"
+        username="zyadmin"
+        sudo-command-enabled="true"
+    />
+
+</project>

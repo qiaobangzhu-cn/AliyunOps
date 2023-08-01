@@ -1,0 +1,5 @@
+project_id,hostname,private_ip,public_ip,check_publicIp_returnCode,check_publicIp_result
+1,prj-h1,192.168.0.1,106.14.0.1,0,20.0.0.1
+1,prj-h2,192.168.0.2,,0,1.2.3.4
+1,prj-h3,10.28.0.3,,1,
+1,prj-h4,10.28.0.4,,2,

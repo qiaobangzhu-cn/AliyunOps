@@ -1,0 +1,29 @@
+- hosts: local
+  remote_user: zyadmin 
+  sudo: yes
+  tasks:
+  - name: delete file
+    shell: rm -f ~/check_print.sh
+  - name: wget script
+    shell: cd && wget http://git.jiagouyun.com/operation/operation/raw/master/linux/sys/check/check_print.sh
+  - name: mkdir
+    shell: mkdir -p /alidata/t_ops_print
+  - name: clear dir
+    shell: rm -f /alidata/t_ops_print/*
+
+- hosts: servers
+  remote_user: zyadmin
+  sudo: yes
+  tasks:
+  - name: copy script
+    copy: src=~/check_print.sh dest=~/check_print.sh force=yes
+  - name: run script
+    shell: bash ~/check_print.sh
+  - name: copy result file
+    synchronize: src=/tmp/file_print/ dest=/alidata/t_ops_print/ mode=pull
+
+- hosts: sshserver
+  remote_user: qrj
+  tasks:
+  - name: copy script
+    copy: src=/alidata/t_ops_print/ dest=/alidata/file_print/qrj  force=yes

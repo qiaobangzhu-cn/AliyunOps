@@ -1,0 +1,7 @@
+projectid,hostname,private_ip,public_ip,Url,Result
+1,prj-h1,192.168.0.1,106.14.0.1,https://www.aliyun.com/,HTTP/1.1 200 OK
+1,prj-h1,192.168.0.1,106.14.0.1,https://cloudcare.cn/,HTTP/1.1 200 OK
+1,prj-h1,192.168.0.1,106.14.0.1,https://ddns.oray.com/checkip,HTTP/1.1 200 OK
+1,prj-h2,192.168.0.2,,https://www.aliyun.com/,HTTP/1.1 200 OK
+1,prj-h2,192.168.0.2,,https://cloudcare.cn/,HTTP/1.1 200 OK
+1,prj-h2,192.168.0.2,,https://ddns.oray.com/checkip,HTTP/1.1 200 OK

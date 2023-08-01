@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+    <node
+        name="xhs-elasticsearch"
+        description="xhs-elasticsearch"
+        tags="xhs-elasticsearch"
+        hostname="121.41.13.176:63322"
+        username="root"
+        sudo-command-enabled="true"
+    />
+
+</project>
+

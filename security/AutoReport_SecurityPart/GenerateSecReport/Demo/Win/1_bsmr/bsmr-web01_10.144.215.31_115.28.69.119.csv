@@ -1,0 +1,10 @@
+"kernel","3.10.0"
+"architeture","x86_64"
+"distribution","CentOS release"
+"shell","GNU bash, version 4.2.45(1)"
+"openssl","1.0.1e-fips"
+"apache","2.4.6 (CentOS)"
+"tomcat",null
+"nginx",null
+#iptables INPUT exception:
+num,dpt
